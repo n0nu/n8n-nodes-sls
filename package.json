@@ -1,19 +1,19 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-sls",
   "version": "0.1.0",
-  "description": "",
+  "description": "n8n node to call sls api",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
   "homepage": "",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "n0ne",
+    "email": "test@example.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/n0ne/n8n-nodes-sls.git"
   },
   "engines": {
     "node": ">=20.15"
@@ -50,6 +50,9 @@
     "typescript": "^5.8.2"
   },
   "peerDependencies": {
-    "n8n-workflow": "*"
+    "n8n-workflow": "^1.82.0"
+  },
+  "dependencies": {
+    "@alicloud/sls20201230": "^5.6.0"
   }
 }

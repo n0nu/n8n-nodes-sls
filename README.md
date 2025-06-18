@@ -1,46 +1,51 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# n8n-nodes-sls
 
-# n8n-nodes-starter
+## 项目概述
+`n8n-nodes-sls` 是一个为 n8n 工作流自动化平台定制的扩展项目，提供阿里云日志服务（SLS）的对接调用功能。该项目提供了自定义节点，让用户能够在 n8n 工作流中轻松与阿里云 SLS 进行交互，实现日志查询功能。
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
+## 项目结构
+```
+├── .editorconfig
+├── .eslintrc.js
+├── .eslintrc.prepublish.js
+├── .gitignore
+├── .npmignore
+├── .prettierrc.js
+├── .vscode/
+│   └── extensions.json
+├── CODE_OF_CONDUCT.md
+├── LICENSE.md
+├── README.md
+├── README_TEMPLATE.md
+├── credentials/
+│   └── SlsApi.credentials.ts
+├── gulpfile.js
+├── index.js
+├── nodes/
+│   └── Sls/
+│       ├── Sls.node.json
+│       ├── Sls.node.ts
+│       ├── sls.svg
+│       └── sls.svg:Zone.Identifier
+├── package-lock.json
+├── package.json
+└── tsconfig.json
+```
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+## 安装与配置
+### 安装依赖
+```bash
+pnpm install
+```
 
-## Prerequisites
+### 构建项目
+```bash
+pnpm run build
+```
 
-You need the following installed on your development machine:
+## 使用方法
+1. 在 n8n 界面中配置阿里云 SLS 的访问凭证，包括 `Endpoint`、`AccessKey ID` 和 `AccessKey Secret`
+2. 在 n8n 界面中添加 `Sls` 节点，配置相应的参数后即可在工作流中使用阿里云 SLS 的功能。当前支持的操作主要包括：日志搜索。
 
-* [git](https://git-scm.com/downloads)
-* Node.js and pnpm. Minimum version Node 20. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-  ```
-  npm install n8n -g
-  ```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
-
-## Using this starter
-
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
-
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-   ```
-   git clone https://github.com/<your organization>/<your-repo-name>.git
-   ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm lint` to check for errors or `npm lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
-
-## More information
-
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
-
-## License
-
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+## 许可证
+本项目采用 [MIT 许可证](LICENSE.md)。
