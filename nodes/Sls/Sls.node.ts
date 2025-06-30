@@ -159,7 +159,7 @@ export class Sls implements INodeType {
 					reverse: reverse,
 					powerSql: powerSql,
 					line: iline < 100 ? iline : 100,
-					offset: offset,
+					offset: begin,
 				});
 				getLogsResponse = await client.getLogs(project, logstore, getLogsRequest);
 			}
